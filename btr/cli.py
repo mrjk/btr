@@ -6,7 +6,6 @@
 import click
 import click_log
 from btr.common import Controller
-from btr.logging import log
 
 
 # Configure logging
@@ -26,7 +25,7 @@ consolehandler.setFormatter(consoleformatter)
 @click.group()
 @click_log.simple_verbosity_option(log)
 @click.option('-c', '--config', 
-        default='tests/data1.yml', 
+        default='tests/data.yml', 
         help='Yaml config to use', 
         type=click.Path(exists=True))
 @click.option('-t', '--timer', 
