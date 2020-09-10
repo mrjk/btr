@@ -6,10 +6,9 @@ This project has been made in the context of a recruiting process for behavox.
 
 The installation procedure is quite simple:
 ```
-git clone https://github.com/mrjk/btr.git && \
-  cd btr && virtualenv -p python3 venv && \
-  . venv/bin/activate && \
-  pip install .
+git clone https://github.com/mrjk/btr.git && cd btr
+virtualenv -p python3 venv && . venv/bin/activate
+pip install .
 ```
 
 For development version, use `pip install -e .` instead.
@@ -18,19 +17,32 @@ For development version, use `pip install -e .` instead.
 
 There is how to use the program:
 ```
-btr --help
 btr start fullhouse
 btr stop fullhouse
 ```
 
-You can choose your own dataset, with the `-c` flag.
-You can also tweak verbosity output with `-v` and the time services take to load with the `-t` flag.
+You can choose your own dataset, with the `--config` flag. You can also tweak verbosity output with `-v` and the time services take to load with the `--timer` flag. To get the full help:
+
+```
+$ btr --help
+Usage: btr [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  -c, --config PATH  Yaml config to use
+  -t, --timer FLOAT  Time service need to start in seconds (1s)
+  -v, --verbose
+  --help             Show this message and exit.
+
+Commands:
+  start  Start a service
+  stop   Stop a service
+```
 
 ## Example
 
-There is an output example:
+There is an output example, with the [default yaml dataset](tests/data.yml):
 ```
-btr  start   dashboard
+btr start dashboard
 [23.049] INFO: Starting service "dashboard" ...
 [23.049] INFO: Sequential services order: mysql, elasticsearch, zookeeper, hadoop-namenode, hbase-master, fullhouse, dashboard
 [24.051] INFO: Service Started: mysql
@@ -50,7 +62,7 @@ btr  start   dashboard
 * Allow to switch between sequential or threaded service processing
 * Document yaml file format
 
-## Licence
+## Licence (MIT)
 
 Copyright 2020, Robin Cordier
 
