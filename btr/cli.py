@@ -4,7 +4,6 @@
 # Imports
 # -------------------------------------------
 import click
-import click_log
 from btr.common import Controller
 
 
@@ -23,7 +22,6 @@ consolehandler.setFormatter(consoleformatter)
 # -------------------------------------------
 
 @click.group()
-@click_log.simple_verbosity_option(log)
 @click.option('-c', '--config', 
         default='tests/data.yml', 
         help='Yaml config to use', 
