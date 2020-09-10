@@ -4,7 +4,7 @@ from setuptools import setup
 version='0.1'
 
 setup(
-    name='click-project',
+    name='behavox-rcordier-test',
     version=version,
     author='Robin Cordier',
     author_email='robin.cordier@gmail.com',
