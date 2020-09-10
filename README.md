@@ -1,17 +1,18 @@
-
 # Python project service solver
 
-This project has been made in the context of a recruiting process.
+This project has been made in the context of a recruiting process for behavox.
 
 ## Install
 
 The installation procedure is quite simple:
 ```
-git clone https://github.com/mrjk/btr.git
-cd btr && pip install .
+git clone https://github.com/mrjk/btr.git && \
+  cd btr && virtualenv -p python3 venv && \
+  . venv/bin/activate && \
+  pip install .
 ```
 
-Note: It is recommended to use virtualenv.
+For development version, use `pip install -e .` instead.
 
 ## Usage
 
