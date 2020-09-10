@@ -10,6 +10,7 @@ setup(
     author_email='robin.cordier@gmail.com',
     description='This is an recruitment test for behavox',
     zip_safe=False,
+    packages=['btr'],
     install_requires=[
         "click>=7.1",
         "PyYAML>=5.3",
